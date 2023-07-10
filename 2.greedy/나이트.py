@@ -34,6 +34,6 @@ def solution(posi=''):
     return cnt
 
 
-print(solution('a1')) 
+print(solution('a1'))  # 2
 
 
