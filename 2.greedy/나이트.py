@@ -21,8 +21,19 @@ dxy = [
     [-2, -1],
 ]
 
-def solution(posi=[]):
+def solution(posi=''):
+    cnt = 0
     x = alpha.get(posi[0])
-    y = int(posi[1])
+    y = int(posi[1]) - 1
+
+    for pin in dxy:
+        dx = pin[0]
+        dy = pin[1]
+        if 0 < x + dx < 8 and 0 < y + dy < 8:
+            cnt += 1
+    return cnt
+
+
+print(solution('a1')) 
 
 

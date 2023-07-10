@@ -1,0 +1,16 @@
+def solution(S):
+
+    result = ''
+    summ = 0
+    lst = list(S)
+    lst.sort()
+    
+    for s in lst:
+        if str(s).isdigit():
+            summ += int(s)
+        else:
+            result += s
+    return result + str(summ)
+
+
+print(solution("K1KA5CB7"))  # ABCKKK13
