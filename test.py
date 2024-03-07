@@ -1,16 +1,16 @@
 def solution(A):
-    prev, diff = -1, 10 ** 9
-    A.sort()
-    for a in A:
-        if prev != -1:
-            diff = min(diff, abs(a - prev))
-        prev = a
-    return diff if len(set(A)) != 1 else 0
+    a.sort()
+    left, right = A[0], A[-1]
+    pivot = (right + left) / 2
+    left_boat = []
+    right_boat = []
+    for i, v in enumerate(hole):
+        if pivot < v:
+            right_boat.append(v)
+        else:
+            left_boat.append(v)
 
-
-print(solution([1, 1]))
-print(solution([1, 1, 1, 5]))
-print(solution([10, 5]))
-print(solution([9, 11, 7]))
-print(solution([7, 13, 10]))  # 7 10 13
-
+    left_boat_length = 1 if len(left_boat) <= 1 else left_boat[-1] - left_boat[0]
+    right_boat_length = 1 if len(right_boat) <= 1 else right_boat[-1] - right_boat[0]
+    ans = max(left_boat_length, right_boat_length)
+    return ans
